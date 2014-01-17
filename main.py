@@ -2,7 +2,7 @@
 
 from urllib import request, parse
 from http.cookiejar import CookieJar
-import re
+import re, os
 from PIL import Image
 from download import Downloader
 
@@ -14,8 +14,13 @@ def getCaptcha(captchaURL):
     fp = open("captcha.jpeg", 'wb')
     fp.write(response.read())
     fp.close()
+    #for windows
     img = Image.open("captcha.jpeg")
     img.show()
+    '''
+    #for linux
+    os.system("eog captcha.jpeg")
+    '''
     strCaptcha = input("验证码：")
     return strCaptcha
     
