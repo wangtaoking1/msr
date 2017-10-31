@@ -51,14 +51,14 @@ def login():
         strCaptcha = ''
     
     #登陆验证https://douban.com/accounts/login，获取cookie
-    headers = {"cookie": '''ue="479021795@qq.com"''',
+    headers = {"cookie": '''ue="user@qq.com"''',
                "User-Agent": '''Mozilla/5.0 (Windows NT 6.1; rv:26.0) Gecko/20100101 Firefox/26.0''',
                "Referer": "http://www.douban.com/",
                "Connection": "keep-alive"}
     rawData = {
         "source": "index_nav",
-        "form_email": "479021795@qq.com",
-        "form_password": "wang52675281",}
+        "form_email": "user@qq.com",
+        "form_password": "xxxxxxxxx",}
     if captchaID:
         rawData["captcha-id"] = captchaID
         rawData["captcha-solution"] = strCaptcha
